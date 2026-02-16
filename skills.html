@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical Skills | Ashish Kumar Singh</title>
+    <!-- DevIcon for Tech Logos -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    <!-- Font Awesome for UI Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/dist/css/all.min.css">
+    
+    <style>
+        /* Global Styles */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body { 
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6; 
+            color: #ffffff; 
+            background-color: #2b437d; /* Deep Navy/Dark background */
+            overflow-x: hidden;
+        }
+        
+        /* Navbar Styling */
+        .navbar {
+            position: fixed; top: 0; width: 100%; 
+            background: rgba(15, 23, 42, 0.9); /* Transparent blur */
+            backdrop-filter: blur(10px);
+            padding: 15px 30px; display: flex; justify-content: space-between;
+            align-items: center; z-index: 1000;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .logo { color: white; font-size: 24px; font-weight: 800; text-decoration: none; letter-spacing: -1px; }
+        .menu-icon { color: white; font-size: 28px; cursor: pointer; }
+
+        /* Hidden Menu Style */
+       
+       
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Hero Section (Matching Home Gradient) */
+        .skills-hero {
+            background: linear-gradient(135deg, #56608b 0%, #764ba2 100%);
+            padding: 160px 20px 100px;
+            text-align: center;
+            position: relative;
+        }
+        .skills-hero h1 { 
+            font-size: 4rem; margin-bottom: 1rem; font-weight: 900; 
+            letter-spacing: -2px;
+            text-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        .skills-hero p { 
+            font-size: 1.4rem; opacity: 0.9; max-width: 800px; 
+            margin: 0 auto; font-weight: 300; 
+        }
+
+        /* Section Container */
+        .container { max-width: 1200px; margin: -60px auto 80px; padding: 0 25px; }
+
+        /* Modern Glass Card Design */
+        .skill-section {
+            background: rgba(22, 28, 39, 0.5); /* Semi-transparent */
+            border-radius: 24px; padding: 50px;
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255,255,255,0.1);
+            margin-bottom: 50px;
+            box-shadow: 0 25px 50px -12px rgba(141, 82, 82, 0.5);
+        }
+        
+        .category-title {
+            font-size: 2rem; color: #f1f5f9; margin-bottom: 40px;
+            display: flex; align-items: center; gap: 15px;
+            font-weight: 700;
+        }
+        .category-title i { color: #a78bfa; }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 30px;
+           
+        }
+
+        /* Aesthetic Skill Item */
+        .skill-item {
+            text-align: center; padding: 30px 15px; border-radius: 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: default;
+            background-color: rgb(169, 152, 152);
+        }
+        
+        .skill-item:hover {
+            transform: translateY(-12px) scale(1.05);
+            background: rgba(255, 255, 255, 0.08);
+            border-color: #a78bfa;
+            box-shadow: 0 15px 30px rgba(118, 75, 162, 0.3);
+        }
+        
+        .skill-item i {
+            font-size: 65px; margin-bottom: 20px; display: block;
+            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.3));
+        }
+
+        .skill-item span { 
+            font-weight: 600; color: #e2e8f0; font-size: 1.1rem; 
+            letter-spacing: 0.5px;
+        }
+
+        /* Buttons */
+        .btn-back {
+            display: inline-block; padding: 14px 35px; margin-top: 25px;
+            background: #ffffff; color: #1e293b; text-decoration: none;
+            border-radius: 50px; font-weight: 700; transition: 0.3s;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .btn-back:hover { 
+            background: #764ba2; color: white; transform: translateY(-3px); 
+            box-shadow: 0 15px 30px rgba(118, 75, 162, 0.4);
+        }
+
+        /* Custom Icon Colors Adjustment */
+        .colored { filter: saturate(1.2); }
+
+        footer { 
+            background: #0f172a; color: #94a3b8; 
+            text-align: center; padding: 50px 20px; 
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .skills-hero h1 { font-size: 2.8rem; }
+            .skills-hero p { font-size: 1.1rem; }
+            .skills-grid { grid-template-columns: repeat(2, 1fr); }
+            .skill-section { padding: 30px 20px; }
+            .category-title { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="index.html" class="logo">ASHISH</a>
+        <div class="menu-icon" onclick="toggleMenu()">
+            <i class="fas fa-ellipsis-h"></i>
+        </div>
+        
+    </nav>
+
+    <!-- Aesthetic Skills Hero -->
+    <header class="skills-hero">
+        <h1>My <span>Expertise</span></h1>
+        <p>Turning complex problems into elegant, functional digital solutions.</p>
+        <a href="home.html" class="btn-back"><i class="fas fa-arrow-left"></i> Back Home</a>
+    </header>
+
+    <div class="container">
+        
+        <!-- Programming -->
+        <div class="skill-section">
+            <h2 class="category-title"><i class="fas fa-terminal"></i> Core Programming</h2>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <i class="devicon-c-plain colored"></i>
+                    <span>C Language</span>
+                </div>
+                <div class="skill-item">
+                    <i class="devicon-java-plain-wordmark colored"></i>
+                    <span>Java Core</span>
+                </div>
+              
+            </div>
+        </div>
+
+        <!-- Web Development -->
+        <div class="skill-section">
+            <h2 class="category-title"><i class="fas fa-globe"></i>Web Development</h2>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <i class="devicon-html5-plain colored"></i>
+                    <span>HTML5</span>
+                </div>
+                <div class="skill-item">
+                    <i class="devicon-css3-plain colored"></i>
+                    <span>CSS3</span>
+                </div>
+                <div class="skill-item">
+                    <i class="devicon-javascript-plain colored"></i>
+                    <span>JavaScript</span>
+                </div>
+                
+                
+            </div>
+        </div>
+
+        <!-- Database -->
+        <div class="skill-section">
+            <h2 class="category-title"><i class="fas fa-server"></i> Backend & DataBase</h2>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <i class="devicon-mysql-plain-wordmark colored"></i>
+                    <span>MySQL DB</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>Built for the future &copy; 2026 Ashish Kumar Singh</p>
+    </footer>
+
+    <script>
+        function toggleMenu(){
+            const menu = document.getElementById("menu");
+            menu.classList.toggle("show");
+        }
+
+        // Close menu if clicked outside
+        window.onclick = function(event) {
+            if (!event.target.matches('.menu-icon') && !event.target.matches('.fa-ellipsis-h')) {
+                const menu = document.getElementById("menu");
+                if (menu.classList.contains('show')) {
+                    menu.classList.remove('show');
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>

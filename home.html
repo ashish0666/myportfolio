@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ashish - Web Developer | Delhi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        /* Smooth Scroll Enable */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+        
+        /* Navbar Style */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: #2c3e50;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .logo { color: white; font-size: 22px; font-weight: bold; }
+        .menu-icon { color: white; font-size: 28px; cursor: pointer; }
+
+        /* Hidden Menu */
+    #menu {
+    position: absolute;
+    top: 70px;
+    right: 30px;
+    background: #d29fdc;
+    list-style: none;
+    border-radius: 12px;
+    width: 200px;
+
+    /* hidden state */
+    opacity: 0;
+    transform: translateY(-30px);
+    pointer-events: none;
+
+    /* smooth animation */
+    transition: opacity 0.6s ease, transform 0.6s ease;
+
+    box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+}
+
+
+#menu.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+
+
+        #menu li a {
+            display: block;
+            padding: 12px 15px;
+            text-decoration: none;
+            color: #333;
+            border-bottom: 1px solid #eee;
+        }
+
+        #menu li a:hover { background: #ae9797; color: white; }
+        #menu.show { display: block; }
+
+        /* Sections Styling */
+        #home {
+            background: linear-gradient(135deg, #56608b 0%, #764ba2 100%);
+            color: white; text-align: center;
+            padding: 150px 20px 100px; min-height: 60vh;
+            display: flex; flex-direction: column; justify-content: center;
+        }
+
+        #home h1 { font-size: 3rem; margin-bottom: 2rem; }
+        #home p { font-size: 1.3rem; margin-bottom: 2rem; max-width: 600px; margin: 0 auto 2rem; }
+
+        .btn {
+            display: inline-block; padding: 12px 30px;
+            background: white; color: #4f577e; text-decoration: none;
+            border-radius: 5px; font-weight: bold; transition: all 0.3s;
+            margin: 10px;
+        }
+        .btn:hover {
+    background-color: #7ccaba;
+}
+
+
+        .section-title { text-align: center; font-size: 2.5rem; margin-bottom: 3rem; color: #2c3e50; }
+        .bg-light { background: #f8f9fa; padding: 100px 20px; }
+        
+        .about-content { 
+            display: grid; 
+            grid-template-columns: 1fr 2fr; 
+            gap: 3rem; 
+            align-items: center; 
+            max-width: 1200px; 
+            margin: 0 auto;
+        }
+
+        .profile-img { width: 250px; height: 250px; border-radius: 50%; object-fit: cover; box-shadow: 0 15px 35px rgba(0,0,0,0.1); }
+
+        /* Education Styling */
+        .section-container { padding: 100px 20px; text-align: center; max-width: 1200px; margin: 0 auto; }
+        .main-heading { font-size: 42px; color: #2c3e50; margin-bottom: 40px; font-weight: bold; }
+        .content-block { margin: 0 auto 30px; max-width: 800px;
+          
+         }
+        .sub-heading { font-size: 22px; color: #333; margin-bottom: 8px; font-weight: 700; }
+        .text-description { font-size: 18px; color: #555; line-height: 1.6; }
+
+        footer { background: #2c3e50; color: white; text-align: center; padding: 3rem 20px; }
+        .social-links { margin-top: 20px; }
+        .social-links a { color: white; text-decoration: none; margin: 0 15px; }
+
+        @media (max-width: 768px) {
+            .about-content { grid-template-columns: 1fr; text-align: center; }
+            .profile-img { margin: 0 auto; }
+            #home h1 { font-size: 2.2rem; }
+        }
+
+        .section-container {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+.main-heading {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.content-block {
+    background-color: #4f577e;
+    
+    border-radius: 12px;
+    padding: 20px 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 6px 15px rgba(158, 114, 114, 0.1);
+    border-left: 5px solid #007bff;
+}
+
+.sub-heading {
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+    color:white;
+}
+
+.text-description {
+    font-size: 1rem;
+    color: #f0eaea;
+}
+
+.content-block:hover {
+    transform: translateY(-5px);
+    transition: 0.3s ease;
+}
+.social-links {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+    align-items: center;
+}
+.social-links {
+    display: flex;
+    justify-content: center;   /* horizontally center */
+    align-items: center;       /* vertically center */
+    gap: 20px;
+    margin-top: 20px;
+}
+
+
+.social-links a {
+    text-decoration: none;
+    font-size: 1.1rem;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 15px;
+    border-radius: 8px;
+    background: #f2f2f2;
+    transition: 0.3s ease;
+    
+}
+
+.social-links a:hover {
+    background: #007bff;
+    color: #fff;
+}
+
+.social-links i {
+    font-size: 1.3rem;
+}
+ 
+   
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">My Portfolio</div>
+        <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+        <ul id="menu">
+            <li><a href="#home" onclick="toggleMenu()">Home</a></li>
+            <li><a href="#about" onclick="toggleMenu()">About</a></li>
+            <li><a href="#education" onclick="toggleMenu()">Education</a></li>
+            <li><a href="certifications.html" onclick="toggleMenu()">Certifications</a></li>
+            <li><a href="skills.html" onclick="toggleMenu()">Skills</a></li>
+            <li><a href="project.html" onclick="toggleMenu()">Projects</a></li>
+            <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="home">
+        <h1>Hi, I'm <strong>Ashish</strong></h1>
+        <p>Web Developer from Delhi building dynamic apps with MySQL, HTML/CSS/JS</p>
+        <div class="hero-btns">
+            <a href="project.html" class="btn">View Projects</a>
+            <a href="#contact" class="btn">Contact Me</a>
+        </div>
+    </section>
+
+    <section id="about" class="bg-light">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-content">
+            <img src="pro.jpeg" alt="Profile Photo" class="profile-img">
+            <div>
+                <h3>Web Developer</h3>
+                <p>Intermediate developer specializing in HTML, CSS, JAVASCRIPT, with MySQL databases. I am working also on C and JAVA Programming.I am continuously improving my technical and problem-solving skills and looking for opportunities to grow in the IT industry.</p>
+                <br>
+                <p>From Delhi, passionate about clean code and user-friendly apps.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="education" class="section-container">
+        <h2 class="main-heading">Education</h2>
+        
+        <div class="content-block">
+            
+            <h3 class="sub-heading">•  Master of Computer Applications (MCA)</h3>
+            <p class="text-description">
+                     GL Bajaj Institute of Technology and Management | 2024-2026
+            </p>
+           
+        </div>
+
+        <div class="content-block">
+            <h3 class="sub-heading">•  Bachelor of Computer Applications (BCA)</h3>
+            <p class="text-description">
+                Future University Bareilly| 2021-2024
+            </p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Ashish Kumar Singh. Made with ❤️ in Delhi.</p>
+        <div id="contact"class="social-links">
+    <a href="https://wa.me/+919675251408" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i> Whatsapp
+    </a>
+
+    <a href="https://www.linkedin.com/in/ashish-kumarsingh-15940b246/" target="_blank">
+        <i class="fa-brands fa-linkedin"></i> LinkedIn
+    </a>
+
+    <a href="https://github.com/ashish0666" target="_blank">
+        <i class="fa-brands fa-github"></i> GitHub
+    </a>
+</div>
+
+    </footer>
+
+    <script>
+        function toggleMenu(){
+            document.getElementById("menu").classList.toggle("show");
+        }
+    </script>
+
+</body>
+</html>

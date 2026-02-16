@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Ashish Kumar Singh</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #2b437d;
+            color: #ffffff;
+            
+        }
+
+        /* Navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(15, 23, 42, 0.9);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+        }
+
+        .logo {
+            color: white;
+            font-size: 24px;
+            font-weight: 800;
+            text-decoration: none;
+        }
+
+        /* Hero */
+        .projects-hero {
+            background: linear-gradient(135deg, #56608b, #764ba2);
+            padding: 160px 20px 100px;
+            text-align: center;
+        }
+
+        .projects-hero h1 {
+            font-size: 3.8rem;
+            margin-bottom: 10px;
+        }
+
+        .projects-hero p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+        }
+
+        .btn-back {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 14px 35px;
+            background: #fff;
+            color: #1e293b;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            transition: 0.3s;
+        }
+
+        .btn-back:hover {
+            background: #764ba2;
+            color: white;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: -60px auto 80px;
+            padding: 0 25px;
+        }
+
+        /* Project Card */
+        .project-card {
+            background: rgba(60, 78, 107, 0.5);
+            border-radius: 24px;
+            padding: 35px;
+            margin-bottom: 40px;
+            border: 1px solid rgba(255,255,255,0.1);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
+            transition: 0.4s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 40px rgba(118,75,162,0.4);
+        }
+
+        .project-title {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .project-desc {
+            color: #060606;
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+
+        .tech-used {
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+            color: #a78bfa;
+        }
+
+        .project-links a {
+            display: inline-block;
+            margin-right: 15px;
+            padding: 10px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            color: white;
+            background: #764ba2;
+            transition: 0.3s;
+        }
+
+        .project-links a:hover {
+            background: #5b3b8d;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: #94a3b8;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        @media (max-width: 768px) {
+            .projects-hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+    <a href="index.html" class="logo">ASHISH</a>
+</nav>
+
+<!-- Hero -->
+<header class="projects-hero">
+    <h1>My Projects</h1>
+    <p>Real-world applications built with passion & clean code</p>
+    <a href="home.html" class="btn-back"><i></i> Back Home</a>
+</header>
+
+<!-- Projects -->
+<div class="container">
+
+    <div class="project-card">
+        <h2 class="project-title">
+            <i class="fas fa-users"></i> Social Networking Website
+        </h2>
+        <p class="project-desc">
+            A full-stack social networking platform with user authentication, profile management,
+            posts, likes/dislikes, and AJAX-based interactions.
+        </p>
+        <p class="tech-used">
+            <strong>Technologies:</strong> PHP, MySQL, HTML, CSS, JavaScript, jQuery, AJAX
+        </p>
+        <div class="project-links">
+            <a href="#"><i class="fas fa-code"></i> Source Code</a>
+        </div>
+    </div>
+
+    <div class="project-card">
+        <h2 class="project-title">
+            <i class="fas fa-briefcase"></i> Portfolio Website
+        </h2>
+        <p class="project-desc">
+            Personal portfolio website showcasing skills, education, and projects with modern UI
+            and responsive design.
+        </p>
+        <p class="tech-used">
+            <strong>Technologies:</strong> HTML, CSS, JavaScript
+        </p>
+        <div class="project-links">
+            <a href="#"><i class="fas fa-globe"></i> Live Demo</a>
+        </div>
+    </div>
+
+    
+    </div>
+
+</div>
+
+<footer>
+    <p>&copy; 2026 Ashish Kumar Singh</p>
+</footer>
+
+</body>
+</html>
